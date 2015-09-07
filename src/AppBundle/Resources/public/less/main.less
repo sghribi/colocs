@@ -1,0 +1,69 @@
+// Mixins
+.text-on-n-lines(@nb_lines) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @nb_lines;
+  line-height: 1em;
+  max-height: 1em*@nb_lines;
+}
+
+// Include bootstrap3 with : font-awesome + jasny-bootstrap
+@import "../../../../../app/Resources/less/bootstrap.less";
+
+//@import "global.less";
+
+// Fonts
+@fonts-path: "/bundles/app/fonts";
+@import "fonts.less";
+
+// Homepage
+html, body {
+  height: 100%;
+}
+
+#map {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.controls {
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 25px;
+  left: 10px;
+  z-index: 3;
+}
+
+#map-input {
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 400px;
+  max-width: 85% !important;
+}
+
+#map-input::-webkit-input-placeholder::before { font-family: fontAwesome; content:'\f002  '; color: #69f }
+#map-input::-moz-placeholder::before  { font-family: fontAwesome; content:'\f002  '; color: #69f }
+#map-input:-ms-input-placeholder::before  { font-family: fontAwesome; content:'\f002  '; color: #69f }
+#map-input:-moz-placeholder::before  { font-family: fontAwesome; content:'\f002  '; color: #69f }
+
+#map-input:focus {
+  border-color: #4d90fe;
+}
