@@ -33,7 +33,7 @@ class UserAuthenticationService implements UserProviderInterface
      */
     public function loadUserByUsername($login)
     {
-        return $this->userService->createOrUpdateUserByLogin($login, true);
+        return $this->userService->createOrUpdateUserByLogin($login);
     }
 
     /**

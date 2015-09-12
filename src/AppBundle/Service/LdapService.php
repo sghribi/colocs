@@ -30,7 +30,7 @@ class LdapService
         }
 
         // Mode débug en mode CLI
-        // ldap_set_option(NULL, LDAP_OPT_DEBUG_LEVEL, 7);
+        //ldap_set_option(NULL, LDAP_OPT_DEBUG_LEVEL, 7);
 
         $this->ldapConnection = ldap_connect($host);
         ldap_bind($this->ldapConnection, $this->config['cti']['bind_dn'], $this->config['cti']['password']);
@@ -53,7 +53,7 @@ class LdapService
      */
     public function getDataByUid($uid)
     {
-        $resource = ldap_search($this->getConnection(), $this->config['cti']['base_dn'], 'uid=' . $uid, array('uid', 'givenName', 'sn', 'mail', 'jpegPhoto'));
+        $resource = ldap_search($this->getConnection(), $this->config['cti']['base_dn'], 'supannaliaslogin=' . $uid, array('uid', 'givenName', 'ecpNomEtatCivil', 'mail', 'eduPersonPrimaryAffiliation', 'supannEntiteAffectationPrincipale', 'jpegPhoto'));
         $results = ldap_get_entries($this->getConnection(), $resource);
 
         if($results['count'] == 1) {

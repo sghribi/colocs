@@ -76,7 +76,7 @@ class UserService
         try {
             $datas = $this->ldap->getDataByUid($user->getUsername());
             $user->setFirstName($datas['givenname'][0]);
-            $user->setLastName($datas['sn'][0]);
+            $user->setLastName($datas['ecpnometatcivil'][0]);
             $user->setEmail($datas['mail'][0]);
             $user->setPlainPassword(md5(uniqid(rand(), true)));
             $user->setPhoto(base64_encode($datas['jpegphoto'][0]));
