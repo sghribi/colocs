@@ -20,7 +20,7 @@ parameters:
     secret:            dpzajlfkjezlmkfjmqklezflkezfez
     site_name:         Colocs
 
-    bind_dn:           uid=viabase,ou=applications,dc=campus,dc=ecp,dc=fr
+    bind_dn:           cn=viabase,dc=campus,dc=ecp,dc=fr
     ldap_password:     ~
     ldap_host:         annuaire.ldap.ecp.fr
 
