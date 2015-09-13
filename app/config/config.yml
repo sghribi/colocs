@@ -236,3 +236,22 @@ parameters:
             bind_dn: %bind_dn%
             password: %ldap_password%
             base_dn:  ou=people,dc=ecp,dc=fr
+
+# FOSRestBundle configuration
+fos_rest:
+    routing_loader:
+        default_format: json
+    param_fetcher_listener: true
+    body_listener: true
+    format_listener: true
+    view:
+        view_response_listener: 'force'
+
+# JMS Config
+jms_serializer:
+    metadata:
+        auto_detection: true
+        directories:
+            FOSUserBundle:
+                namespace_prefix: "FOS\\UserBundle"
+                path: "@AppBundle/Resources/config/serializer/fos"

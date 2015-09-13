@@ -158,4 +158,27 @@ class User extends BaseUser implements UserInterface
     {
         return $this->photo;
     }
+
+    /**
+     * Set house
+     *
+     * @param \AppBundle\Entity\House $house
+     * @return User
+     */
+    public function setHouse(\AppBundle\Entity\House $house = null)
+    {
+        $this->house = $house;
+
+        return $this;
+    }
+
+    /**
+     * Get house
+     *
+     * @return \AppBundle\Entity\House 
+     */
+    public function getHouse()
+    {
+        return $this->house;
+    }
 }

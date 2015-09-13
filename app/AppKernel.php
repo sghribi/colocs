@@ -32,11 +32,12 @@ class AppKernel extends Kernel
             new BeSimple\SsoAuthBundle\BeSimpleSsoAuthBundle(),
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
-            new JMS\SerializerBundle\JMSSerializerBundle(),
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new Liip\UrlAutoConverterBundle\LiipUrlAutoConverterBundle(),
+            new FOS\RestBundle\FOSRestBundle(),
+            new JMS\SerializerBundle\JMSSerializerBundle($this),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

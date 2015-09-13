@@ -7,6 +7,12 @@
   {# Map #}
   <div id="map"></div>
 
+  {# Photo #}
+  <img alt="{{ app.user.username }}"  src="data:image/jpg;base64,{{ app.user.photo }}" class="profile" />
+
+  {# Singaler #}
+  <button class="btn btn-info"><i class="fa fa-fw fa-plus-sign"></i> </button>
+
   {# Init map #}
   <script type="text/javascript">
     var map;
@@ -72,6 +78,15 @@
         } else {
           map.setCenter(place.geometry.location);
           map.setZoom(17);
+        }
+      });
+
+
+      $.ajax({
+        url: Routing.generate('app_homepage_gethouses'),
+        type: 'GET',
+        success: function(data) {
+          addMarkers(data);
         }
       });
     }

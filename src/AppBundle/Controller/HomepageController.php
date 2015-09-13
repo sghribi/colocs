@@ -2,14 +2,10 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
-use AppBundle\Entity\ArticleCategory;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\HttpFoundation\Response;
+
 
 /**
  * Class HomepageController
@@ -23,6 +19,14 @@ class HomepageController extends Controller
     public function indexAction()
     {
         return array();
+    }
+
+    /**
+     * @Route("/houses", options={"expose": true}, defaults={"_format": "json"})
+     */
+    public function getHousesAction()
+    {
+        return $this->getDoctrine()->getRepository('AppBundle:House')->findAll();
     }
 
     /**
