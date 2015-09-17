@@ -50,7 +50,8 @@
         "tilleuls/ckeditor-sonata-media-bundle": "^1.0",
         "liip/url-auto-converter-bundle": "dev-master",
         "friendsofsymfony/rest-bundle": "~1.5",
-        "jms/serializer-bundle": "0.13.*"
+        "jms/serializer-bundle": "0.13.*",
+        "components/handlebars.js": "3.0.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -136,6 +137,17 @@
                 "dist": {
                     "url": "https://github.com/lipis/bootstrap-social/archive/4.9.0.zip",
                     "type": "zip"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "components/handlebars.js",
+                "version": "3.0.0",
+                "dist": {
+                    "url": "https://raw.githubusercontent.com/components/handlebars.js/v3.0.0/handlebars.js",
+                    "type": "file"
                 }
             }
         }

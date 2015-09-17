@@ -20,8 +20,11 @@
 
     function addMarkers (houses) {
       $.each(houses, function (index, house) {
+        template =  Handlebars.compile($('#house-card').html());
+        content =  template({house: house});
+
         var infowindow = new google.maps.InfoWindow({
-          content: JSON.stringify(house)
+          content: content
         });
 
         var marker = new google.maps.Marker({
@@ -93,4 +96,26 @@
 
   </script>
   <script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=places"></script>
+
+  {% verbatim %}
+    <script id="house-card" type="text/x-handlebars-template">
+      <div class="house-card">
+        <h4>{{ house.name }}</h4>
+        <p><i class="fa fa-fw fa-map-marker"></i> {{ house.address }}</p>
+        <em>{{ house.summary }}</em>
+        {{#each house.members}}
+        <div class="media">
+          <div class="media-left media-middle">
+            <a href="https://my.ecp.fr/m/{{ cti_uid }}" target="_blank">
+              <img class="media-object" src="data:image/jpg;base64,{{ photo }}" alt="{{ username }}">
+            </a>
+          </div>
+          <div class="media-body">
+            {{ first_name }} {{ last_name }}
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </script>
+  {% endverbatim %}
 {% endblock %}

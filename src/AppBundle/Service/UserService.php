@@ -80,6 +80,7 @@ class UserService
             $user->setEmail($datas['mail'][0]);
             $user->setPlainPassword(md5(uniqid(rand(), true)));
             $user->setPhoto(base64_encode($datas['jpegphoto'][0]));
+            $user->setCtiUid($datas['uid'][0]);
         } catch (\Exception $e) {
             throw new UsernameNotFoundException(sprintf('Impossible de trouver %s dans le LDAP', $user->getUsername()));
         }

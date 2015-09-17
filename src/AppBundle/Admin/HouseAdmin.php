@@ -2,6 +2,8 @@
 
 namespace AppBundle\Admin;
 
+use AppBundle\Entity\House;
+use AppBundle\Entity\User;
 use Sonata\AdminBundle\Admin\Admin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
@@ -69,5 +71,27 @@ class HouseAdmin extends Admin
             ->add('latitude')
             ->add('longitude')
         ;
+    }
+
+    /**
+     * @param House $object
+     */
+    public function preUpdate($object)
+    {
+        /** @var User $media */
+        foreach ($object->getMembers() as $user) {
+            $user->setHouse($object);
+        }
+    }
+
+    /**
+     * @param House $object
+     */
+    public function prePersist($object)
+    {
+        /** @var User $media */
+        foreach ($object->getMembers() as $user) {
+            $user->setHouse($object);
+        }
     }
 }

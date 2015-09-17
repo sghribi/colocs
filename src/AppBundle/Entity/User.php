@@ -52,6 +52,14 @@ class User extends BaseUser implements UserInterface
     protected $lastName;
 
     /**
+     * @var string $ctiUid
+     *
+     * @ORM\Column(name="cti_uid", type="string", length=255, nullable=true)
+     * @Serializer\Expose
+     */
+    protected $ctiUid;
+
+    /**
      * @var string
      *
      * String corresponding to the photo of the user encoded in base64
@@ -64,7 +72,7 @@ class User extends BaseUser implements UserInterface
     /**
      * @var House
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\House", cascade={"persist"}, inversedBy="members")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\House", cascade={"persist", "remove"}, inversedBy="members")
      * @ORM\JoinColumn(name="house_id", referencedColumnName="id", nullable=true, onDelete="CASCADE")
      */
     protected $house;
@@ -180,5 +188,28 @@ class User extends BaseUser implements UserInterface
     public function getHouse()
     {
         return $this->house;
+    }
+
+    /**
+     * Set ctiUid
+     *
+     * @param string $ctiUid
+     * @return User
+     */
+    public function setCtiUid($ctiUid)
+    {
+        $this->ctiUid = $ctiUid;
+
+        return $this;
+    }
+
+    /**
+     * Get ctiUid
+     *
+     * @return string 
+     */
+    public function getCtiUid()
+    {
+        return $this->ctiUid;
     }
 }
