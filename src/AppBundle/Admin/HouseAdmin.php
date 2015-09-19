@@ -50,7 +50,11 @@ class HouseAdmin extends Admin
             ->add('name')
             ->add('summary')
             ->add('type')
-            ->add('members')
+            ->add('members', 'sonata_type_model_autocomplete', array(
+                    'property' => 'email',
+                    'multiple' => true,
+                )
+            )
             ->add('address', null, array(
                 'label' => 'Adresse qui sera affichée dans l\'infobulle (y ajouter des infos complémentaires par exemple)',
             ))

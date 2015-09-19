@@ -82,7 +82,7 @@ class User extends BaseUser implements UserInterface
      */
     public function __toString()
     {
-        return sprintf('%s %s', $this->firstName, $this->lastName);
+        return sprintf('%s %s (%s)', $this->firstName, $this->lastName, $this->ctiUid);
     }
 
     /**

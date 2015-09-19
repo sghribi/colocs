@@ -46,6 +46,25 @@ class LdapService
     }
 
     /**
+     * Get all Cti Uid
+     *
+     * @return array
+     */
+    public function getAllCtiUid()
+    {
+        $resource = ldap_search($this->getConnection(), $this->config['cti']['base_dn'], 'uid=*', array('supannaliaslogin'));
+        $results = ldap_get_entries($this->getConnection(), $resource);
+
+        $results_tab = array();
+
+        for ($i = 0; $i < $results['count']; $i++) {
+            array_push($results_tab, $results[$i]['supannaliaslogin'][0]);
+        }
+
+        return $results_tab;
+    }
+
+    /**
      * Get Data for a Uid
      *
      * @param string $ctiUid
