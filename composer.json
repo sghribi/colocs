@@ -51,7 +51,8 @@
         "liip/url-auto-converter-bundle": "dev-master",
         "friendsofsymfony/rest-bundle": "~1.5",
         "jms/serializer-bundle": "0.13.*",
-        "components/handlebars.js": "3.0.0"
+        "components/handlebars.js": "3.0.0",
+        "oh/google-map-form-type-bundle": "dev-master"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -84,6 +85,7 @@
     "config": {
         "bin-dir": "bin"
     },
+    "minimum-stability": "dev",
     "extra": {
         "symfony-app-dir": "app",
         "symfony-web-dir": "web",

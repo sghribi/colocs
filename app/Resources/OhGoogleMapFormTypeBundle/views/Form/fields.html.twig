@@ -1,0 +1,8 @@
+{# your template which is inluded in the config.yml (above)
+   eg src/My/Location/Resources/views/Form/fields.html.twig #}
+{% extends "OhGoogleMapFormTypeBundle:Form:google_maps.html.twig" %}
+{% block oh_google_maps_callback %}
+  <script type="text/javascript">
+    var oh_google_maps_callback = function(location, gmap) {}
+  </script>
+{% endblock %}

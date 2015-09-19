@@ -35,6 +35,10 @@ twig:
         jasny_bootstrap_dir: %kernel.root_dir%/../vendor/jasny/bootstrap
         social_bootstrap_dir: %kernel.root_dir%/../vendor/lipis/bootstrap-social
         google_analytics_tracking_id: %google_analytics_tracking_id%
+    form:
+        resources:
+            # This uses the default - you can put your own one here
+            - 'OhGoogleMapFormTypeBundle:Form:fields.html.twig'
 
 # Assetic Configuration
 assetic:
@@ -42,6 +46,8 @@ assetic:
     use_controller: false
     bundles:
         - AppBundle
+        - OhGoogleMapFormTypeBundle
+
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

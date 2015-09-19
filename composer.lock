@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "070b7655db27550f52823994f62601b9",
+    "hash": "1a8bfd0ad575192f659ef121d70d642e",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -3033,6 +3033,50 @@
             "time": "2015-05-16 17:16:14"
         },
         {
+            "name": "oh/google-map-form-type-bundle",
+            "version": "dev-master",
+            "target-dir": "Oh/GoogleMapFormTypeBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ollieLtd/OhGoogleMapFormTypeBundle.git",
+                "reference": "270d3fbdb5ba456f2c3313a6b3c69d1d3ba7d12b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ollieLtd/OhGoogleMapFormTypeBundle/zipball/270d3fbdb5ba456f2c3313a6b3c69d1d3ba7d12b",
+                "reference": "270d3fbdb5ba456f2c3313a6b3c69d1d3ba7d12b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "~2.1"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-0": {
+                    "Oh\\GoogleMapFormTypeBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ollie Harridge",
+                    "email": "code@oll.ie"
+                }
+            ],
+            "description": "Set latitude and longitude values on a form using Google Maps",
+            "homepage": "https://github.com/ollieLtd/OhGoogleMapFormTypeBundle",
+            "keywords": [
+                "form",
+                "google maps",
+                "symfony"
+            ],
+            "time": "2015-02-05 11:05:00"
+        },
+        {
             "name": "oyejorge/less.php",
             "version": "v1.7.0.5",
             "source": {
@@ -3420,7 +3464,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/475a1b543956044611204a3a572247684b52cfb7",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/b60b81b3a7799a57faa83b655424922fe47b24d9",
                 "reference": "1e0750a2333aa8ce6581adbde121958b05eb1a84",
                 "shasum": ""
             },
@@ -3634,7 +3678,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataClassificationBundle/zipball/5ae998458bf74de75e5a7e503c17ff817f6b98aa",
+                "url": "https://api.github.com/repos/sonata-project/SonataClassificationBundle/zipball/ddf354c5367380dd4556c3b855cb48d375368c63",
                 "reference": "3e71fd4aea3fc1606eaca78a6540b7c67731cbc0",
                 "shasum": ""
             },
@@ -3700,7 +3744,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/4f953732e81d099764682bfa20bd65cf31068a8c",
+                "url": "https://api.github.com/repos/sonata-project/SonataCoreBundle/zipball/55f44c11efdd8c579d2aea414fbe1415a2a4001f",
                 "reference": "740faff31ceda763a9887bc05141c3040d2ec2cf",
                 "shasum": ""
             },
@@ -4131,7 +4175,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/ed1bb65e8f7156a1f3c1103b33283f00718d0c30",
+                "url": "https://api.github.com/repos/sonata-project/SonataMediaBundle/zipball/74562891321543e08ca4d11cac3fc468fe777b1f",
                 "reference": "337fe4ceca35ec0370df14d810fad2dff586632d",
                 "shasum": ""
             },
@@ -5071,7 +5115,7 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "doctrine/migrations": 20,
         "doctrine/doctrine-migrations-bundle": 20,
@@ -5089,7 +5133,8 @@
         "sonata-project/datagrid-bundle": 20,
         "sonata-project/intl-bundle": 20,
         "besimple/sso-auth-bundle": 20,
-        "liip/url-auto-converter-bundle": 20
+        "liip/url-auto-converter-bundle": 20,
+        "oh/google-map-form-type-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

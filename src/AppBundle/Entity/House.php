@@ -8,6 +8,8 @@ use Gedmo\IpTraceable\Traits\IpTraceableEntity;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 use Symfony\Component\Validator\Constraints as Assert;
 use JMS\Serializer\Annotation as Serializer;
+use Oh\GoogleMapFormTypeBundle\Validator\Constraints as OhAssert;
+
 
 /**
  * Article
@@ -286,5 +288,25 @@ class House
     public function getMembers()
     {
         return $this->members;
+    }
+
+    public function setLatLng($latlng)
+    {
+        $this->setLatitude($latlng['lat']);
+        $this->setLongitude($latlng['lng']);
+
+        return $this;
+    }
+
+    /**
+     * @Assert\NotBlank()
+     * @OhAssert\LatLng()
+     */
+    public function getLatLng()
+    {
+        return array(
+            'lat' => $this->getLatitude(),
+            'lng' => $this->getLongitude()
+        );
     }
 }
