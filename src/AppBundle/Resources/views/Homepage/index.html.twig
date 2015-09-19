@@ -29,7 +29,8 @@
 
         var marker = new google.maps.Marker({
           position: {lat: house.latitude, lng: house.longitude},
-          map: map
+          map: map,
+          icon: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Azure-icon.png'
         });
 
         marker.addListener('click', function() {
@@ -61,9 +62,10 @@
       // ECP
       var ecpMarker = new google.maps.Marker({
         map: map,
-        anchorPoint: new google.maps.Point(0, -29)
+        anchorPoint: new google.maps.Point(0, -29),
+        icon: 'https://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Pink-icon.png',
+        position: {lat: 48.765165, lng:  2.288402}
       });
-      ecpMarker.setPosition({lat: 48.765165, lng:  2.288402});
 
       // Add autocomplete
       var input = document.getElementById('map-input');
