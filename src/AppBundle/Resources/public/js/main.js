@@ -29,6 +29,9 @@ $(document).ready(function() {
       $faIcon.removeClass().addClass('fa fa-spinner fa-fw fa-spin');
     });
   });
+
+  // Menu
+  $('.toggle-menu').jPushMenu();
 });
 
 // Disable 300ms delay on mobile devices

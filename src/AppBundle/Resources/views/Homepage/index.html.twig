@@ -18,14 +18,23 @@
     </ul>
   </div>
 
+  {# Menu button #}
+  <button class="menu-button toggle-menu menu-left btn btn-lg btn-info">
+    <i class="fa fa-bars"></i>
+  </button>
 
-  {# Singaler #}
-  <button class="btn btn-info"><i class="fa fa-fw fa-plus-sign"></i> </button>
+  {# Menu #}
+  <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="colocs">
+    <h3>Colocs</h3>
+  </nav>
 
   {# Init map #}
   <script type="text/javascript">
     var map;
     var houses;
+    var infowindows = [];
+
+    var $menu = $('#colocs');
 
     function addMarkers (houses) {
       $.each(houses, function (index, house) {
@@ -35,6 +44,7 @@
         var infowindow = new google.maps.InfoWindow({
           content: content
         });
+        infowindows.push(infowindow);
 
         var marker = new google.maps.Marker({
           position: {lat: house.latitude, lng: house.longitude},
@@ -42,8 +52,28 @@
           icon: 'http://icons.iconarchive.com/icons/icons-land/vista-map-markers/48/Map-Marker-Ball-Azure-icon.png'
         });
 
+
         marker.addListener('click', function() {
           infowindow.open(map, marker);
+
+          $.each(infowindows, function(index, infw) {
+            if(infw !== infowindow) {
+              infw.close();
+            }
+          });
+        });
+
+        $template = $('<a href="#">' + house.name + '</a>');
+        $menu.append($template);
+        $template.on('click', function(e) {
+          e.stopPropagation();
+          infowindow.open(map, marker);
+
+          $.each(infowindows, function(index, infw) {
+            if(infw !== infowindow) {
+              infw.close();
+            }
+          });
         });
       });
     }
