@@ -8,7 +8,19 @@
   <div id="map"></div>
 
   {# Photo #}
-  <img alt="{{ app.user.username }}"  src="data:image/jpg;base64,{{ app.user.photo }}" class="profile" />
+  <div class="dropdown profile">
+    <a href="#" class="dropdown-toggle" type="button" id="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+      <img alt="{{ app.user.username }}" src="data:image/jpg;base64,{{ app.user.photo }}" />
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="dropdown">
+      <li><a href="mailto:samy.ghribi@student.ecp.fr?subject=Mise à jour de la carte des colocs">Mettre à jour</a></li>
+      {% if is_granted('ROLE_ADMIN') %}
+        <li><a href="{{ path('sonata_admin_dashboard') }}" target="_blank">Admin</a></li>
+      {% endif %}
+      <li><a href="{{ path('logout') }}">Déconnexion</a></li>
+    </ul>
+  </div>
+
 
   {# Singaler #}
   <button class="btn btn-info"><i class="fa fa-fw fa-plus-sign"></i> </button>

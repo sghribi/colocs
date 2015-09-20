@@ -70,15 +70,18 @@ html, body {
 
 .profile {
   z-index: 10;
-  height: 50px;
-  width: 50px;
-  border-radius: 25px;
   position: absolute;
   right: 20px;
   top: 20px;
-  user-drag: none;
-  -webkit-user-drag: none;
-  -moz-user-select: none;
+
+  img {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    user-drag: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+  }
 }
 
 .house-card {
@@ -91,4 +94,8 @@ html, body {
     vertical-align: middle;
     width: auto;
   }
+}
+
+.open > .dropdown-menu {
+  margin-left: -100px;
 }
