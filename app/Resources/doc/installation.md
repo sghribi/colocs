@@ -193,7 +193,6 @@ php app/console assetic:dump
 
 ``` bash
 php app/console doctrine:fixtures:load --purge-with-truncate
-php app/console garopi:import:old-database
 ```
 
 ### Accès au LDAP du CTI (optionnel si vous avez une IP en 138.195.0.0/16)
