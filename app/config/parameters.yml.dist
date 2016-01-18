@@ -25,3 +25,4 @@ parameters:
     ldap_host:         annuaire.ldap.ecp.fr
 
     google_analytics_tracking_id: UA-XXXXXXXX-X
+    be_simple.sso_auth.client.option.curlopt_sslversion.value: 4
